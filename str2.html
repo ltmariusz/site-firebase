@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="generator" content="Jekyll v4.1.1">
+		<title>Cover Template · Bootstrap</title>
+
+		<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<style>
+		  .bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		  }
+
+		  @media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+			  font-size: 3.5rem;
+			}
+		  }
+		  #map {
+		  height: 400px;
+		  width: 100%;
+		  }
+		  
+		</style>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0YHVYCblgw6Jfch4WtVApnZ-BjO_sRMU&callback=initMap&libraries=&v=weekly"AIzaSyD0YHVYCblgw6Jfch4WtVApnZ-BjO_sRMU defer></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+		<script src="/__/firebase/8.2.1/firebase.js"></script>
+		<script src="firebase.js"> </script>
+
+		
+		
+		<!-- Custom styles for this template -->
+		<link href="css/cover.css" rel="stylesheet">
+	</head>
+	<body class="text-center"  onload="wyswietlanie();">
+		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+		<main role="main" class="inner cover">
+			<h1 class="cover-heading">Inteligentny wozek</h1>
+			<p class="lead">Jestes zalogowany!</p>
+			<div>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<p>Stan Baterii [%]: </p>
+						</div>
+						<div class="col">
+							<p id="bater"> ladowanie...</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p>szerokosc geograficzna:</p>
+						</div>
+						<div class="col">
+							<p id="szero"> ...</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p>dlugosc geograficzna:</p>
+						</div>
+						<div class="col">
+							<p id="dlug"> ...</p>
+						</div>
+					</div>
+				</div>
+				
+				<div id="map"></div>
+				
+				<script>
+					function initMap() {
+						const mark = { lat: 52.597355, lng: 17.615515000000002 };
+						const map = new google.maps.Map(document.getElementById("map"), {
+						zoom: 15,
+						center: mark,
+					});
+					  
+					const marker = new google.maps.Marker({
+						position: mark,
+						map: map,
+						});
+					}
+				</script>
+				
+				<br>
+				<a href="index.html" class="btn btn-lg btn-secondary">Wyloguj</a>
+			</div>
+			
+			<script src="index.js"></script>
+		</main>
+		<footer class="mastfoot mt-auto">Mariusz Lemanski</footer>
+		</div>
+	</body>
+</html>
