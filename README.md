@@ -1,3 +1,5 @@
+Old website, training
+
 **ENG**
 A simple website that connects in real-time to a Firebase database, 
 collecting data transmitted from an Android app. The configuration file firebase.js, 
